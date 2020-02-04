@@ -1,0 +1,13 @@
+.slider{
+    background: url("img/1190.jpg");
+    height: 380px;
+    background-size: cover;
+}
+
+.footer {
+    background: url("./views/img/pizarra.jpg");
+    
+  }
+  .navbar{
+    background-color: rgb(17, 16, 16);
+  }
