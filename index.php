@@ -6,6 +6,10 @@
             break;
             case 1: require('./views/login.html');
             break;
+            case 2:  require('./views/registro.html');
+            break;
+            case 3:  require('./views/busqueda.html');
+            break;
         }
     } else{
         require('./views/index.html');

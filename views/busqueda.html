@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div class="container-fluid text-center slider text-black py-5">
+      <div class="container-fluid text-center slider text-black py-5" >
           <h3>¿Estás buscando un coche nuevo?</h3>
           <h1 class="display-4">Solicita información sin compromiso</h1>
 
@@ -99,47 +99,132 @@
           </form>
       </div>
 
-      <div class="container justify-content-center py-5">
-        <div class="row">
-          <div class="col-lg-3 col-sm-12">
-            <h3 class="display3 text-dark"><i class="far fa-clock"></i> Horario</h3>
+      <div class="container justify-content-center my-5 py-4  border">
+        <form>
+            <h2 class="display-4"><i class="fas fa-search"></i> Filtro de búsqueda</h2>
             <hr>
-            <ul class="list-unstyled pt-3">
-              <li><i class="fas fa-calendar-day pr-1"></i> Lunes-Viernes: 9.00h - 21:30h</li>
-              <li><i class="fas fa-calendar-day pr-1"></i>Sábados: 9:00h - 14:00h</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 col sm-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3727736062438!2d-6.009989384355163!3d37.40466304113908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126b8b8d549607%3A0xf6f214e62ecf3d8b!2sCalle%20Leonardo%20da%20Vinci%2C%207%2C%2041092%20Sevilla!5e0!3m2!1ses!2ses!4v1580836273299!5m2!1ses!2ses" width="450" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          </div>
-          <div class="col-lg-3 col sm-12">
-            <h3 class="display3 text-dark"><i class="fas fa-car"></i> Nuestras marcas</h3>
-            <hr>
-            <!-- <ul class="list-unstyled pt-3">
-              <li>BMW</li>
-              <li>Audi</li>
-              <li>Wolswagen</li>
-              <li>Seat</li>
-            </ul> -->
-            <div class="row pb-4">
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/bmw.jpg" class="img-fluid">
+            <div class="form-group row">
+                <label for="inputMarca" class="col-sm-2 col-form-label">Marca</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputMarca" placeholder="Marca" required>
+                </div>
               </div>
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/audi.jpg" class="img-fluid">
+              <div class="form-group row">
+                <label for="inputModelo" class="col-sm-2 col-form-label">Modelo</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputModelo" placeholder="Modelo">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputColor" class="col-sm-2 col-form-label">Color</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputColor" placeholder="Color">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputAnio" class="col-sm-2 col-form-label">Año de matriculación</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputAnio" placeholder="Año de matriculación">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputMotor" class="col-sm-2 col-form-label">Motor</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputMotor" placeholder="Motor">
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/wg.jpg" class="img-fluid">
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                <img src="./views/img/seat.png" class="img-fluid">
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
               </div>
             </div>
-          </div>
-
-        </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Combustible</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gasolina" id="gasolina" value="gasolina" checked>
+                    <label class="form-check-label" for="gasolina">
+                      Gasolina
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="diesel" id="diesel" value="diesel">
+                    <label class="form-check-label" for="diesel">
+                      Diesel
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Nº Puertas</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="5p" id="5p" value="5p" checked>
+                      <label class="form-check-label" for="5p">
+                        5 puertas
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="3p" id="3p" value="3p">
+                      <label class="form-check-label" for="3p">
+                        3 puertas
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            <div class="form-group row">
+              <div class="col-sm-2">Extras</div>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="aire">
+                  <label class="form-check-label" for="aire">
+                    Aire acondicionado
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="eleva">
+                  <label class="form-check-label" for="eleva">
+                    Elevalunas electrico
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="remolque">
+                  <label class="form-check-label" for="remolque">
+                    Remolque
+                  </label>
+                </div>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="airbag">
+                  <label class="form-check-label" for="airbag">
+                    Airbag
+                  </label>
+                </div>
+                  <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="navegador">
+                  <label class="form-check-label" for="navegador">
+                    Navegador
+                  </label>
+                </div>
+                </div>
+              </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                  <hr>
+                <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+              </div>
+            </div>
+          </form>
       </div>
       <footer class=" footer container-fluid text-center text-white"> 
         <div class="row pt-2">
