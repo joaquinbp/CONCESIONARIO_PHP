@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -326,10 +327,19 @@ input[type=text]:placeholder {
               </div>
           
               <!-- Login Form -->
-              <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+              <form action="./controllers/user_controller.php" method="POST">
+                <input type="text" id="user" class="fadeIn second" name="user" placeholder="username">
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <p style="color:red;">
+                  <?php
+                 
+                  if(isset($_SESSION['mensaje'])){
+                      echo $_SESSION['mensaje'];
+                  }
+                  unset($_SESSION['mensaje'])
+                  ?>
+              </p>
+                <input type="submit" class="fadeIn fourth" value="Login" name="Login">
               </form>
           
               <!-- Remind Passowrd -->
