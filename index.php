@@ -3,15 +3,27 @@ session_start();
 
     if(isset($_GET['vista'])){
         switch($_GET['vista']){
-            case 0 : require('./views/index.html');
+            case 'principal' : require('./views/index.html');
             break;
-            case 1: require('./views/login.php');
+            case 'login': require('./views/login.php');
             break;
-            case 2:  require('./views/registro.html');
+            case 'registro':  require('./views/registro.php');
             break;
-            case 3:  require('./views/busqueda.html');
+            case 'busqueda':
+                if(isset($_GET['admin'])){
+                    if($_GET['admin']==1){
+                        require('./views/cabecera_admin.html');
+                        require('./views/busqueda.html');
+                        require('./views/footer.html');
+                    } else{
+                        require('./views/cabecera_user.html');
+                        require('./views/busqueda.html');
+                        require('./views/footer.html');
+                    }
+                
             break;
         }
+    }
     } else{
         require('./views/index.html');
     }

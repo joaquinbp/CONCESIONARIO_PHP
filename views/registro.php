@@ -294,7 +294,8 @@ input[type=text]:placeholder, input[type=email]:placeholder, input[type=tel]:pla
                 <li class="nav-item active pr-5 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="index.php?vista=0">Cerrar sesion</a>
+                    <a class="dropdown-item" href="index.php?vista=login">Login</a>
+                      <a class="dropdown-item" href="index.php?vista=registro">Registro nuevo usuario</a>
                     </div>
                 </li>
               </ul>
@@ -326,14 +327,23 @@ input[type=text]:placeholder, input[type=email]:placeholder, input[type=tel]:pla
               </div>
           
               <!-- Login Form -->
-              <form>
-                <input type="text" id="nombre" class="fadeIn second" name="user" placeholder="Nombre" required>
-                <input type="text" id="apellidos" class="fadeIn third" name="login" placeholder="Apellidos" required>
+              <form action="./controllers/user_controller.php" method="POST"> 
+                <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellidos" class="fadeIn third" name="apellidos" placeholder="Apellidos" required>
                 <input type="text" id="user" class="fadeIn second" name="user" placeholder="Usuario" required>
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required>
                 <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required>
-                <input type="tel" id="password" class="fadeIn third" name="login" placeholder="Telefono" required>
-                <input type="submit" class="fadeIn fourth" value="Registrarme">
+                <input type="tel" id="telefono" class="fadeIn third" name="telefono" placeholder="Telefono" required>
+                <p style="color:red;">
+                  <?php
+                 
+                  if(isset($_SESSION['mensaje'])){
+                      echo $_SESSION['mensaje'];
+                  }
+                  unset($_SESSION['mensaje'])
+                  ?>
+              </p>
+                <input type="submit" class="fadeIn fourth" value="Registrarme" name="Registrarme">
               </form>
           
               <!-- Remind Passowrd -->

@@ -295,7 +295,8 @@ input[type=text]:placeholder {
                 <li class="nav-item active pr-5 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="index.php?vista=0">Cerrar sesion</a>
+                    <a class="dropdown-item" href="index.php?vista=login">Login</a>
+                      <a class="dropdown-item" href="index.php?vista=registro">Registro nuevo usuario</a>
                     </div>
                 </li>
               </ul>

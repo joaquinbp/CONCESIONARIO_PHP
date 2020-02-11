@@ -27,6 +27,9 @@ class UserController{
     public function login($user,$password){
         $this->users->login_User($user,$password);
     }
+    public function register($nombre,$apellidos,$user,$password,$email,$telefono){
+        $this->users->register_User($nombre,$apellidos,$user,$password,$email,$telefono);
+    }
 }
 
 /*
@@ -67,7 +70,19 @@ if(isset($_POST["update"])){
         $user = $_POST["user"];
         $password = $_POST["password"];
         $userController->login($user,$password);
-    } 
+    } else{
+        if(isset($_POST["Registrarme"])){
+            require_once("../models/user.php");
+            $userController=new UserController();
+            $nombre = $_POST["nombre"];
+            $apellidos = $_POST["apellidos"];
+            $user = $_POST["user"];
+            $password = $_POST["password"];
+            $email = $_POST["email"];
+            $telefono = $_POST["telefono"];
+            $userController->register($nombre,$apellidos,$user,$password,$email,$telefono);
+        }
+    }
     
 
 

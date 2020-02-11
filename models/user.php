@@ -10,12 +10,12 @@ class User{
         $this->db=new PDO('mysql:host=localhost;dbname=Concesionario',"root","");
         $this->personas=array();
     }
-    
+    /*
     private function set_names(){
         return $this->db->query("SET NAMES 'utf8'");
     }
 
-    //Obtiene los usuarios que existen en la BBDD
+    Obtiene los usuarios que existen en la BBDD
     public function get_Users(){
     self::set_names();
     $consulta=$this->db->query("select * from usuarios;");
@@ -25,7 +25,7 @@ class User{
     }
     return $this->personas;
     }
-
+*/
 
     private function test_input($data) {
         $data = trim($data);
@@ -51,19 +51,52 @@ class User{
                 if($users['password']==$password){
                     $_SESSION['login'] = true;
                     $_SESSION['user'] = $user; 
-                    header("Location: ../index.php?vista=3");
+                    if($user == 'joaquinbp'){
+                        header("Location: ../index.php?vista=busqueda&admin=1");
+                    } else{
+                        header("Location: ../index.php?vista=busqueda&admin=0");
+                    }
+                    
                 }  else{
                     $_SESSION['mensaje'] = "Contraseña incorrecta"; 
-                    header("Location: ../index.php?vista=1");
+                    header("Location: ../index.php?vista=login");
                 }
                
             } else{
                 $_SESSION['mensaje'] = "Usuario incorrecto";
-                header("Location: ../index.php?vista=1");
+                header("Location: ../index.php?vista=login");
             }
         }   
     }
 
+    public function register_User($nombre,$apellidos,$user,$password,$email,$telefono){
+        $nombre = $this->test_input($nombre);
+        $apellidos = $this->test_input($apellidos);
+        $user = $this->test_input($user);
+        $password = $this->test_input($password); 
+        $email = $this->test_input($email);
+        $telefono = $this->test_input($telefono);
+        $consulta = "SELECT * FROM usuarios WHERE usuario = '$user';";
+        $res= $this->db->query($consulta);
+        $numUsers = $res->rowCount();
+
+            if($numUsers == 1){
+                $users = array();
+                $users = $res->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['mensaje'] = "Usuario incorrecto, el usuario ya existe";
+                header("Location: ../index.php?vista=registro&hola=1");
+        } else{
+            $insert = "INSERT INTO usuarios (nombre,apellidos,usuario,password,email,telefono) values ('$nombre','$apellidos','$user','$password','$email','$telefono');";
+            $result= $this->db->query($insert);
+            if($result){
+                header("Location: ../index.php?vista=busqueda&admin=0");
+            }
+            
+    
+        }    
+    }  
+    }
+/*
     //Funcion que muestra los usuarios
     public function show_Users(){
         $usuarios=self::get_Users();
@@ -120,5 +153,5 @@ class User{
     }
 
 }
-
+*/
 ?>
