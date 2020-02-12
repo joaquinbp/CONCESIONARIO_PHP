@@ -81,9 +81,20 @@ if(isset($_POST["update"])){
             $email = $_POST["email"];
             $telefono = $_POST["telefono"];
             $userController->register($nombre,$apellidos,$user,$password,$email,$telefono);
+        } else{
+            if(isset($_POST["InsertarCoche"])){
+                require_once("../models/user.php");
+                $userController=new UserController();
+                $marca = $_POST["marca"];
+                $modelo = $_POST["modelo"];
+                $color = $_POST["color"];
+                $password = $_POST["password"];
+                $email = $_POST["email"];
+                $telefono = $_POST["telefono"];
+                $userController->register($nombre,$apellidos,$user,$password,$email,$telefono);
         }
     }
     
-
+    }
 
 ?>

@@ -94,7 +94,19 @@ class User{
             
     
         }    
-    }  
+    } 
+    
+    public function register_Car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1){
+        $insert = "INSERT INTO coches (marca,modelo,color,anio_matriculacion,motor,combustible,num_puertas,Aire_Acondicionado,elevaluna,remolque,airbag,navegador,kms,precio,foto,foto_1) values ('$marca','$modelo','$color','$anio_matriculacion','$motor','$combustible','$num_puertas','$aire','$eleva','$remolque','$airbag','$navegador','$kms','$precio','$img','$img1');";
+            $result= $this->db->query($insert);
+            if($result){
+                header("Location: ../index.php?vista=busqueda&admin=1");
+            } else{
+                echo "Fallo al introducir";
+            }
+    }
+
+    
     }
 /*
     //Funcion que muestra los usuarios
