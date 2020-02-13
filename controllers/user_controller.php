@@ -27,8 +27,13 @@ class UserController{
     public function login($user,$password){
         $this->users->login_User($user,$password);
     }
-    public function register($nombre,$apellidos,$user,$password,$email,$telefono){
+
+    public function register_user($nombre,$apellidos,$user,$password,$email,$telefono){
         $this->users->register_User($nombre,$apellidos,$user,$password,$email,$telefono);
+    }
+
+    public function register_car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1){
+        $this->users->register_Car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1);
     }
 }
 
@@ -80,7 +85,7 @@ if(isset($_POST["update"])){
             $password = $_POST["password"];
             $email = $_POST["email"];
             $telefono = $_POST["telefono"];
-            $userController->register($nombre,$apellidos,$user,$password,$email,$telefono);
+            $userController->register_user($nombre,$apellidos,$user,$password,$email,$telefono);
         } else{
             if(isset($_POST["InsertarCoche"])){
                 require_once("../models/user.php");
@@ -88,10 +93,47 @@ if(isset($_POST["update"])){
                 $marca = $_POST["marca"];
                 $modelo = $_POST["modelo"];
                 $color = $_POST["color"];
-                $password = $_POST["password"];
-                $email = $_POST["email"];
-                $telefono = $_POST["telefono"];
-                $userController->register($nombre,$apellidos,$user,$password,$email,$telefono);
+                $anio_matriculacion = $_POST["anio_matriculacion"];
+                $motor = $_POST["motor"];
+                $precio = $_POST["precio"];
+                $kms = $_POST["kms"];
+                $combustible = $_POST["combustible"];
+                $num_puertas = $_POST["puertas"];
+                if(isset($_POST["aire"])){
+                    $aire=1;
+                    echo "el aire existe";
+                } else{
+                    $aire=0;
+                }
+                if(isset($_POST["eleva"])){
+                    echo "el eleva existe";
+                    $eleva=1;
+                } else{
+                    $eleva=0;
+                }
+                if(isset($_POST["remolque"])){
+                    echo "el el remolque existe";
+                    $remolque=1;
+                } else{
+                    $remolque=0;
+                }
+                if(isset($_POST["airbag"])){
+                    echo "el airbag existe";
+                    $airbag=1;
+                } else{
+                    $airbag=0;
+                }
+                if(isset($_POST["navegador"])){
+                    echo "el nav existe";
+                    $navegador=1;
+                } else{
+                    $navegador=0;
+                }
+
+                $img = $_POST["img"];
+                $img1 = $_POST["img1"];
+
+                $userController->register_car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1);
         }
     }
     

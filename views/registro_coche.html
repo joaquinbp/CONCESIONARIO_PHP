@@ -20,43 +20,43 @@
             <div class="form-group row">
                 <label for="inputMarca" class="col-sm-2 col-form-label">Marca</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputMarca" placeholder="Marca" required>
+                  <input type="text" class="form-control" id="inputMarca" name="marca" placeholder="Marca" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputModelo" class="col-sm-2 col-form-label">Modelo</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" required>
+                  <input type="text" class="form-control" id="inputModelo" name ="modelo" placeholder="Modelo" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputColor" class="col-sm-2 col-form-label">Color</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputColor" placeholder="Color" required>
+                  <input type="text" class="form-control" id="inputColor" name="color" placeholder="Color" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputAnio" class="col-sm-2 col-form-label">Año de matriculación</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputAnio" placeholder="Año de matriculación" required>
+                  <input type="number" class="form-control" id="inputAnio" name="anio_matriculacion" placeholder="Año de matriculación" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputMotor" class="col-sm-2 col-form-label">Motor</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputMotor" placeholder="Motor" required>
+                  <input type="number" class="form-control" id="inputMotor" name="motor" placeholder="Motor" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputPrecio" placeholder="Precio" required>
+                  <input type="number" class="form-control" id="inputPrecio" name="precio" placeholder="Precio" required>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputKm" class="col-sm-2 col-form-label">Kilometros</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputKm" placeholder="Kilometros" required>
+                  <input type="number" class="form-control" id="inputKm" name="kms" placeholder="Kilometros" required>
                 </div>
               </div>
             <fieldset class="form-group">
@@ -64,13 +64,13 @@
                 <legend class="col-form-label col-sm-2 pt-0">Combustible</legend>
                 <div class="col-sm-10">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="combustible" id="combustible" value="Gasolina" checked>
+                    <input class="form-check-input" type="radio" name="combustible" id="gasolina" value="Gasolina" checked>
                     <label class="form-check-label" for="gasolina">
                       Gasolina
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="combustible" id="combustible" value="Diesel">
+                    <input class="form-check-input" type="radio" name="combustible" id="diesel" value="Diesel">
                     <label class="form-check-label" for="diesel">
                       Diesel
                     </label>
@@ -83,13 +83,13 @@
                   <legend class="col-form-label col-sm-2 pt-0">Nº Puertas</legend>
                   <div class="col-sm-10">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="puertas" id="puertas" value="5p" checked>
+                      <input class="form-check-input" type="radio" name="puertas" id="5p" value="5p" checked>
                       <label class="form-check-label" for="5p">
                         5 puertas
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="puertas" id="puertas" value="3p">
+                      <input class="form-check-input" type="radio" name="puertas" id="3p" value="3p">
                       <label class="form-check-label" for="3p">
                         3 puertas
                       </label>
@@ -101,31 +101,31 @@
               <div class="col-sm-2">Extras</div>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="aire" id="aire">
+                  <input class="form-check-input" type="checkbox" name="aire" id="aire" value="0">
                   <label class="form-check-label" for="aire">
                     Aire acondicionado
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="eleva" id="eleva">
+                  <input class="form-check-input" type="checkbox" name="eleva" id="eleva" value="0">
                   <label class="form-check-label" for="eleva">
                     Elevalunas electrico
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name ="remolque" id="remolque">
+                  <input class="form-check-input" type="checkbox" name ="remolque" id="remolque" value="0">
                   <label class="form-check-label" for="remolque">
                     Remolque
                   </label>
                 </div>
                   <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name ="airbag" id="airbag">
+                  <input class="form-check-input" type="checkbox" name ="airbag" id="airbag" value="0">
                   <label class="form-check-label" for="airbag">
                     Airbag
                   </label>
                 </div>
                   <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="navegador" id="navegador">
+                  <input class="form-check-input" type="checkbox" name="navegador" id="navegador" value="0">
                   <label class="form-check-label" for="navegador">
                     Navegador
                   </label>
@@ -135,10 +135,10 @@
               <div class="form-group row">
                 <label for="inputFotos" class="col-sm-2 col-form-label">Imagenes</label>
                 <div class="col-sm-5">
-                    <input type="file" name="archivosubido">
+                    <input type="file" name="img">
                 </div>
                 <div class="col-sm-5">
-                    <input type="file" name="archivosubido">
+                    <input type="file" name="img1">
                 </div>
               </div>
 
