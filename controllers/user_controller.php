@@ -101,30 +101,25 @@ if(isset($_POST["update"])){
                 $num_puertas = $_POST["puertas"];
                 if(isset($_POST["aire"])){
                     $aire=1;
-                    echo "el aire existe";
                 } else{
                     $aire=0;
                 }
                 if(isset($_POST["eleva"])){
-                    echo "el eleva existe";
                     $eleva=1;
                 } else{
                     $eleva=0;
                 }
                 if(isset($_POST["remolque"])){
-                    echo "el el remolque existe";
                     $remolque=1;
                 } else{
                     $remolque=0;
                 }
                 if(isset($_POST["airbag"])){
-                    echo "el airbag existe";
                     $airbag=1;
                 } else{
                     $airbag=0;
                 }
                 if(isset($_POST["navegador"])){
-                    echo "el nav existe";
                     $navegador=1;
                 } else{
                     $navegador=0;
@@ -134,6 +129,13 @@ if(isset($_POST["update"])){
                 $img1 = $_POST["img1"];
 
                 $userController->register_car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1);
+        } else{
+            if(isset($_POST["buscar"])){
+                require_once("../models/user.php");
+                $userController=new UserController();
+                
+
+            }
         }
     }
     
