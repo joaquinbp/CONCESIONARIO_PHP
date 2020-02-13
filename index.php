@@ -20,15 +20,14 @@ session_start();
                         require('./views/busqueda.html');
                         require('./views/footer.html');
                     }
+                }
             break;
-            /*
             case 'registro_coche': 
                 require('./views/cabecera_admin.html');
                 require('./views/registro_coche.html');
                 require('./views/footer.html');
-            break;*/
+            break;
         }
-    }
     } else{
         require('./views/index.html');
     }
