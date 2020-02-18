@@ -35,6 +35,9 @@ class UserController{
     public function register_car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1){
         $this->users->register_Car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1);
     }
+    public function search_car($consulta){
+        $this->users->search_Cars($consulta);
+    }
 }
 
 /*
@@ -101,25 +104,30 @@ if(isset($_POST["update"])){
                 $num_puertas = $_POST["puertas"];
                 if(isset($_POST["aire"])){
                     $aire=1;
+                    echo "el aire existe";
                 } else{
                     $aire=0;
                 }
                 if(isset($_POST["eleva"])){
+                    echo "el eleva existe";
                     $eleva=1;
                 } else{
                     $eleva=0;
                 }
                 if(isset($_POST["remolque"])){
+                    echo "el el remolque existe";
                     $remolque=1;
                 } else{
                     $remolque=0;
                 }
                 if(isset($_POST["airbag"])){
+                    echo "el airbag existe";
                     $airbag=1;
                 } else{
                     $airbag=0;
                 }
                 if(isset($_POST["navegador"])){
+                    echo "el nav existe";
                     $navegador=1;
                 } else{
                     $navegador=0;
@@ -127,13 +135,72 @@ if(isset($_POST["update"])){
 
                 $img = $_POST["img"];
                 $img1 = $_POST["img1"];
+                echo $img;
 
                 $userController->register_car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1);
         } else{
-            if(isset($_POST["buscar"])){
+            if(isset($_POST["Buscar"])){
                 require_once("../models/user.php");
                 $userController=new UserController();
-                
+                $consulta = "SELECT * FROM coches WHERE ";
+                $marca = $_POST["marca"];
+                $consulta = $consulta." marca='".$marca."' and ";
+                if(isset($_POST["modelo"]) && $_POST["modelo"] != ''){
+                    $modelo = $_POST["modelo"];
+                    $consulta = $consulta." modelo='".$modelo."' and ";
+                }
+                if(isset($_POST["color"]) && $_POST["color"] != ''){
+                    $color = $_POST["color"];
+                    $consulta = $consulta." color='".$color."' and ";
+                }
+                if(isset($_POST["anio_matriculacion"]) && $_POST["anio_matriculacion"] != ''){
+                    $anio_matriculacion = $_POST["anio_matriculacion"];
+                    $consulta = $consulta." anio_matriculacion='".$anio_matriculacion."', ";
+                } 
+                if(isset($_POST["motor"]) && $_POST["motor"] != ''){
+                    $motor = $_POST["motor"];
+                    $consulta = $consulta." motor='".$motor."' and ";
+                }
+                if(isset($_POST["precio"]) && $_POST["precio"] != ''){
+                    $precio = $_POST["precio"];
+                    $consulta = $consulta." precio='".$precio."' and ";
+                } 
+                if(isset($_POST["kms"]) && $_POST["kms"] != ''){
+                    $kms = $_POST["kms"];
+                    $consulta = $consulta." kms='".$kms."' and ";
+                }
+                if(isset($_POST["combustible"])){
+                    $combustible = $_POST["combustible"];
+                    $consulta = $consulta." combustible='".$combustible."' and ";
+                } 
+                if(isset($_POST["puertas"])){
+                    $puertas = $_POST["puertas"];
+                    $consulta = $consulta." num_puertas='".$puertas."' and ";
+                } 
+                if(isset($_POST["aire"])){
+                    $aire=1;
+                    $consulta = $consulta." Aire_Acondicionado='".$aire."' and ";
+                } 
+                if(isset($_POST["eleva"])){
+                    $eleva=1;
+                    $consulta = $consulta." elevaluna='".$eleva."' and ";
+                }
+                if(isset($_POST["remolque"])){
+                    $remolque=1;
+                    $consulta = $consulta." remolque='".$remolque."' and ";
+                }
+                if(isset($_POST["airbag"])){
+                    $airbag=1;
+                    $consulta = $consulta." airbag='".$airbag."' and ";
+                } 
+                if(isset($_POST["navegador"])){
+                    $navegador=1;
+                    $consulta = $consulta." navegador='".$navegador."' and ";
+                } 
+                $pos = strrpos($consulta,'and');
+                $consulta = substr_replace($consulta, ';', $pos);
+                echo $consulta;
+                $userController->search_car($consulta);
 
             }
         }
