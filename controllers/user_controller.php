@@ -155,7 +155,7 @@ if(isset($_POST["update"])){
                 }
                 if(isset($_POST["anio_matriculacion"]) && $_POST["anio_matriculacion"] != ''){
                     $anio_matriculacion = $_POST["anio_matriculacion"];
-                    $consulta = $consulta." anio_matriculacion='".$anio_matriculacion."', ";
+                    $consulta = $consulta." anio_matriculacion='".$anio_matriculacion."' and ";
                 } 
                 if(isset($_POST["motor"]) && $_POST["motor"] != ''){
                     $motor = $_POST["motor"];
