@@ -59,7 +59,7 @@ class User{
         }   
     }
 
-    //Funcion de registro de nuevos usuarios
+    //Funcion de registro de nuevos usuarios, comprobando que el nombre de usuario no exista ya en la base de datos
     public function register_User($nombre,$apellidos,$user,$password,$email,$telefono){
         $nombre = $this->test_input($nombre);
         $apellidos = $this->test_input($apellidos);
