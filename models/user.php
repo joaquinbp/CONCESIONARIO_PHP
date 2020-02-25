@@ -14,19 +14,8 @@ class User{
     private function set_names(){
         return $this->db->query("SET NAMES 'utf8'");
     }
- /*
-    Obtiene los usuarios que existen en la BBDD
-    public function get_Users(){
-    self::set_names();
-    $consulta=$this->db->query("select * from usuarios;");
-    foreach($consulta as $res)
-    {
-        $this->personas[]=$res;
-    }
-    return $this->personas;
-    }
-*/
 
+    //Funcion que elimina caracteres inadecuados
     private function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -34,6 +23,7 @@ class User{
         return $data;
       }
       
+      //Funcion de login
     public function login_User($user,$password){
         
         $user = $this->test_input($user);
@@ -69,6 +59,7 @@ class User{
         }   
     }
 
+    //Funcion de registro de nuevos usuarios
     public function register_User($nombre,$apellidos,$user,$password,$email,$telefono){
         $nombre = $this->test_input($nombre);
         $apellidos = $this->test_input($apellidos);
@@ -96,6 +87,7 @@ class User{
         }    
     } 
     
+    //Funcion de registro de nuevos coches
     public function register_Car($marca,$modelo,$color,$anio_matriculacion,$motor,$combustible,$num_puertas,$aire,$eleva,$remolque,$airbag,$navegador,$kms,$precio,$img,$img1){
         $insert = "INSERT INTO coches (marca,modelo,color,anio_matriculacion,motor,combustible,num_puertas,Aire_Acondicionado,elevaluna,remolque,airbag,navegador,kms,precio,foto,foto_1) values ('$marca','$modelo','$color','$anio_matriculacion','$motor','$combustible','$num_puertas',$aire,$eleva,$remolque,$airbag,$navegador,'$kms','$precio','$img','$img1');";
         $result= $this->db->query($insert);
@@ -106,6 +98,7 @@ class User{
             }
     }
 
+    //Funcion que busca coches y muestra los resultados, en funcion de una serie de parametros dados por el usuario
     public function search_Cars($consulta){
         self::set_names();
         $result = $this->db->query($consulta);
@@ -189,7 +182,7 @@ class User{
                       </div>";
                 }
             } else{
-                echo "<tr><td colspan=6>No se han encontrado coches con estos parámetros de busqueda</td><tr>";
+                echo "<tr><td colspan=6>No se han encontrado coches con estos parámetros de busqueda</td><tr><br>";
             }
             echo "<input type='button' onclick='history.back()' class='btn btn-primary my-3' name='volver atrás' value='volver atrás'>";
             echo " </div>";

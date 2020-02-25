@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="./views/css/style.css"> -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       .slider {
@@ -27,7 +27,7 @@
 
 
 
-
+/* CSS del formulario */
 
 a {
   color: #92badd;
@@ -46,9 +46,6 @@ h2 {
   color: #cccccc;
 }
 
-
-
-/* STRUCTURE */
 
 .wrapper {
   display: flex;
@@ -85,8 +82,6 @@ h2 {
 
 
 
-/* TABS */
-
 h2.inactive {
   color: #cccccc;
 }
@@ -96,9 +91,6 @@ h2.active {
   border-bottom: 2px solid #5fbae9;
 }
 
-
-
-/* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #56baed;
@@ -134,7 +126,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text],input[type=password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -155,20 +147,20 @@ input[type=text] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type=text]:placeholder, input[type=password]:placeholder {
   color: #cccccc;
 }
 
 
 
-/* ANIMATIONS */
 
-/* Simple CSS3 Fade-in-down Animation */
+
+/* Animaciones del formulario */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -204,7 +196,6 @@ input[type=text]:placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -248,8 +239,6 @@ input[type=text]:placeholder {
   animation-delay: 1s;
 }
 
-
-/* OTHERS */
 
 *:focus {
     outline: none;
@@ -320,17 +309,14 @@ input[type=text]:placeholder {
       <div class="container justify-content-center py-5">
         <div class="wrapper fadeInDown">
             <div id="formContent">
-              <!-- Tabs Titles -->
-          
-              <!-- Icon -->
+              <!-- Logo -->
               <div class="fadeIn first">
                 <img src="./views/img/logo1.PNG" id="icon" alt="User Icon" />
               </div>
-          
-              <!-- Login Form -->
+          <!-- Login Form -->
               <form action="./controllers/user_controller.php" method="POST">
                 <input type="text" id="user" class="fadeIn second" name="user" placeholder="username">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                 <p style="color:red;">
                   <?php
                  
@@ -343,8 +329,6 @@ input[type=text]:placeholder {
                 <input type="submit" class="fadeIn fourth" value="Login" name="Login">
               </form>
           
-              <!-- Remind Passowrd -->
-          
             </div>
           </div>
       </div>
@@ -353,9 +337,9 @@ input[type=text]:placeholder {
           <div class="col-lg-4 col-sm-12">
             <h4>¿Qué hacemos?</h4>
             <ul class="list-unstyled pt-3">
-              <li>Información detallada</li>
-              <li>Seguimiento de jovenes promesas</li>
-              <li>Análisis de los equipos</li>
+            <li>Información detallada</li>
+              <li>Gran variedad de vehiculos</li>
+              <li>Análisis de todos los modelos y marcas</li>
             </ul>
           </div>
           <div class="col-lg-4 col-sm-12">

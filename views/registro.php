@@ -356,9 +356,9 @@ input[type=text]:placeholder, input[type=email]:placeholder, input[type=tel]:pla
           <div class="col-lg-4 col-sm-12">
             <h4>¿Qué hacemos?</h4>
             <ul class="list-unstyled pt-3">
-              <li>Información detallada</li>
-              <li>Seguimiento de jovenes promesas</li>
-              <li>Análisis de los equipos</li>
+            <li>Información detallada</li>
+              <li>Gran variedad de vehiculos</li>
+              <li>Análisis de todos los modelos y marcas</li>
             </ul>
           </div>
           <div class="col-lg-4 col-sm-12">
