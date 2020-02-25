@@ -110,38 +110,6 @@ class User{
         echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
         echo "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>";
         echo "<title>Document</title>";
-        echo "<style>
-        div.desactivado {
-          transition: width 2s ease 0s, height 2s ease 0s, transform 2s ease 0s;
-          width: 420px;
-          left: 20px;
-          transform: rotateX(68.182deg) rotateY(3.384deg) rotateZ(54.8214deg) scale(0.2) translate(51%, -298%);
-      }
-      div.desactivado:hover{
-        opacity: 0.5;
-      }
-      div.activado{
-        width: 420px;
-          -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-          transition: width 2s, height 2s, transform 2s;
-        position:relative;
-        -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
-        transform: rotateX(0) rotateY(0) rotateZ(0);
-        left: 0px;
-      }
-      div.activado .boton {
-          border: 3px solid #F00;
-          position: absolute;
-          top: 48%;
-          left: 5%;
-          width: 20%;
-          height: 8%;
-          background-color: transparent;
-      }
-      div.activado .boton:hover {
-          border: 3px solid #0F0;
-      }";
-        echo "</style>";
         echo "</head>";
         echo "<body>";
         echo"<div class='container'>

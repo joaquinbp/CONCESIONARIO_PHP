@@ -267,13 +267,13 @@ input[type=text]:placeholder, input[type=password]:placeholder {
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
               <ul class="navbar-nav py-2">
                 <li class="nav-item active pr-5">
-                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php?vista=principal">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item pr-5">
                   <a class="nav-link" href="#">Sobre nosotros</a>
                 </li>
                 <li class="nav-item pr-5">
-                  <a class="nav-link" href="#" >Buscar</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Buscar</a>
                 </li>
                 <li class="nav-item pr-5">
                   <a class="nav-link" href="#">Instalaciones</a>
@@ -292,6 +292,24 @@ input[type=text]:placeholder, input[type=password]:placeholder {
             </div>
           </nav>
       </header>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-exclamation-triangle"></i> Aviso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3 class="text-danger">Debe estar registrado para realizar una búsqueda</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="container-fluid text-center slider text-black py-5">
           <h3>¿Estás buscando un coche nuevo?</h3>
